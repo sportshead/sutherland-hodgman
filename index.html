@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Sutherland-Hodgman algorithm</title>
+        <style>
+            html, body {
+                width:  100%;
+                height: 100%;
+                margin: 0;
+
+                overflow: hidden;
+
+                font-family: sans-serif;
+            }
+
+            #panel {
+                position: absolute;
+                top: 2vh;
+                right: 2vw;
+                width: 20vw;
+                height: 40vh;
+                border: 1px solid black;
+                border-radius: 0.5rem;
+
+                padding: 1rem;
+
+                display: flex;
+                flex-direction: column;
+                gap: 0.1em;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            button {
+                font-size: 0.8rem;
+
+                padding: 0.5em 1em;
+                border-radius: 0.5em;
+                cursor: pointer;
+                border: 1px solid black;
+
+                background-color: white;
+            }
+
+            button:active {
+                filter: brightness(0.95);
+            }
+
+            #step-button {
+                margin-top: auto;
+                background-color: lime;
+
+                font-size: 1rem;
+            }
+
+            .points {
+                overflow: scroll;
+                min-height: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <div id="panel">
+            <h1>Sutherland-Hodgman algorithm</h1>
+            <div class="points">Subject (<i>A</i>=<code id="subject-area">0.00</code>) vertices: <code id="subject-points">[]</code></div>
+            <div class="points">Clip (<i>A</i>=<code id="clip-area">0.00</code>) vertices: <code id="clip-points">[]</code></div>
+            <button id="normalise-button">Normalise vertex order</button>
+
+            <div style="margin-top: 1em">Currently drawing: <code id="current-polygon">subject</code> (<span style="color: blue; cursor: pointer; text-decoration: underline;" id="switch-button">switch</span>)</div>
+
+            <button id="step-button">Step</button>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
